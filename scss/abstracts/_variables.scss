@@ -1,8 +1,8 @@
 //Colors
 $black: #000;
 $white: #fff;
-$gray-dark: #a1a1a1;
-$gray-light: #454545;
+$gray-dark: #454545;
+$gray-light: #a1a1a1;
 
 //Font
 $font-primary: 'Spartan', sans-serif;
@@ -11,3 +11,6 @@ $font-primary: 'Spartan', sans-serif;
 $small-device: 375px;
 $medium-device: 769px;
 $large-device: 1440px;
+
+//Transition
+$transition: all .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
