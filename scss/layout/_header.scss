@@ -1,0 +1,33 @@
+.header {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 5;
+    width: 100%;
+    padding: 3.5rem 0rem;
+
+    & .wrapper {
+        align-items: center;
+    }
+
+    & .menu {
+        height: 2.7rem;
+        width: 3.5rem;
+
+        &__line {
+            height: .4rem;
+            width: 100%;
+            background-color: $white;
+            border-radius: 10rem;
+
+            &:not(:last-child) {
+                margin-bottom: .75rem;
+            }
+        }
+    }
+
+    & .logo {
+        display: inline-block;
+        margin: 0% auto;
+    }
+}
