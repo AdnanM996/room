@@ -1,3 +1,57 @@
 .nav {
-    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 5;
+    background-color: $white;
+    width: 100%;
+    padding: 2.5rem;
+    height: 97px;
+    display: flex;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: $transition-slow;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 97px;
+        right: 0%;
+        bottom: 0%;
+        left: 0%;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba($black, .75);
+    }
+    
+    & ul {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    & li {
+        list-style: none;
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    & a {
+        color: $gray-dark;
+        display: block;
+        font-weight: 700;
+        text-decoration: none;
+        transition: $transition;
+
+        &:active,
+        &:hover {
+            color: $black;
+            text-decoration: underline;
+        }
+    }
+
+    &--open {
+        transform: translateX(0%);
+    }
 }

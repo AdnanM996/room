@@ -20,4 +20,12 @@ body {
     margin: 0% auto;
     width: 90%;
     max-width: 1350px;
+
+    @media only screen and(min-width: $medium-device) {
+        background-color: royalblue;
+    }
+}
+
+img {
+    vertical-align: bottom;
 }

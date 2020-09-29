@@ -18,6 +18,12 @@ body {
   margin: 0% auto;
   width: 90%;
   max-width: 1350px; }
+  @media only screen and (min-width: 769px) {
+    .wrapper {
+      background-color: royalblue; } }
+
+img {
+  vertical-align: bottom; }
 
 html {
   font-size: 62.5%; }
@@ -117,20 +123,85 @@ p {
     align-items: center; }
   .header .menu {
     height: 2.7rem;
-    width: 3.5rem; }
+    width: 3.5rem;
+    position: relative;
+    z-index: 7; }
     .header .menu__line {
       height: .4rem;
       width: 100%;
-      background-color: #fff;
-      border-radius: 10rem; }
+      background-color: #454545;
+      border-radius: 10rem;
+      transition: all .5s ease; }
       .header .menu__line:not(:last-child) {
         margin-bottom: .75rem; }
+      .header .menu__line--top--open {
+        transform: rotate(45deg) translateY(8px) translateX(8px);
+        transition: all .5s ease;
+        transition-delay: .5s; }
+      .header .menu__line--mid--open {
+        animation: midLine .5s ease;
+        transform: translateX(-100%);
+        opacity: 0; }
+      .header .menu__line--bottom--open {
+        transform: rotate(-45deg) translateY(-8px) translateX(8px);
+        transition: all .5s ease;
+        transition-delay: .5s; }
   .header .logo {
     display: inline-block;
     margin: 0% auto; }
 
+@keyframes midLine {
+  0% {
+    transform: translateX(0%); }
+  80% {
+    transform: translateX(10%);
+    opacity: 0.5; }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0; } }
+
 .nav {
-  display: none; }
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 5;
+  background-color: #fff;
+  width: 100%;
+  padding: 2.5rem;
+  height: 97px;
+  display: flex;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: all 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  .nav::after {
+    content: '';
+    position: absolute;
+    top: 97px;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75); }
+  .nav ul {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; }
+  .nav li {
+    list-style: none; }
+    .nav li:not(:last-child) {
+      margin-right: 2rem; }
+  .nav a {
+    color: #454545;
+    display: block;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+    .nav a:active, .nav a:hover {
+      color: #000;
+      text-decoration: underline; }
+  .nav--open {
+    transform: translateX(0%); }
 
 .grid {
   display: grid;
